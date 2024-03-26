@@ -190,7 +190,7 @@ void device_handler::close_device(int device_number, int block_type)
 void device_handler::close_all_devices()
 {
     if (close_flag == false) {
-        for (int i = 0; i < device_vector.size(); i++) {
+        for (std::size_t i = 0; i < device_vector.size(); i++) {
             if (device_vector[i].address != nullptr) {
                 device_vector[i].address->Reset();
                 lime::DeviceRegistry::freeDevice(device_vector[i].address);
